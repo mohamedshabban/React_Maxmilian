@@ -1,11 +1,16 @@
-import Header from './components/Header/Header.jsx';
-import CoreConcepts from './components/CoreConcepts/CoreConcepts.jsx'
-import { CORE_CONCEPTS} from './data.js'
-import TabButton from './components/TabButton.jsx';
+import Header from "./components/Header/Header.jsx";
+import CoreConcepts from "./components/CoreConcepts/CoreConcepts.jsx";
+import { CORE_CONCEPTS } from "./data.js";
+import TabButton from "./components/TabButton.jsx";
+import { useState } from "react";
 function App() {
-  function handleClick(){
-    console.log("Hello World, executed!!")
-}
+  const [selectedTopic,setSelectedTopicFn]=useState('Please click here!!');
+  function handleClick(selectedButton) {
+    //selectedButton-> components, jsx, props, state
+    setSelectedTopicFn(selectedButton);
+    console.log(selectedButton);
+  }
+  console.log('App renedred executed!!');
   return (
     <div>
       <Header />
@@ -13,10 +18,7 @@ function App() {
         <section id="core-concepts">
           <h2>Core Concepts</h2>
           <ul>
-            <CoreConcepts
-              title={CORE_CONCEPTS[0].title}
-              description={CORE_CONCEPTS[0].description}
-              image={CORE_CONCEPTS[0].image} />
+            <CoreConcepts {...CORE_CONCEPTS[0]} />
             <CoreConcepts {...CORE_CONCEPTS[1]} />
             <CoreConcepts {...CORE_CONCEPTS[2]} />
             <CoreConcepts {...CORE_CONCEPTS[3]} />
@@ -25,11 +27,12 @@ function App() {
         <section id="examples">
           <h2>Examples</h2>
           <menu>
-            <TabButton onSelect={handleClick} label='Components' />
-            <TabButton onSelect={handleClick} label='JSX' />
-            <TabButton onSelect={handleClick} label='Props' />
-            <TabButton onSelect={handleClick} label='State' />
+            <TabButton onSelect={()=>handleClick('component')} label="Components" />
+            <TabButton onSelect={()=>handleClick('jsx')} label="JSX" />
+            <TabButton onSelect={()=>handleClick('props')} label="Props" />
+            <TabButton onSelect={()=>handleClick('state')} label="State" />
           </menu>
+          {selectedTopic}
         </section>
       </main>
     </div>

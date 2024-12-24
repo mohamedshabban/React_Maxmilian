@@ -29,17 +29,17 @@ export const CORE_CONCEPTS = [
       'React-managed data which, when changed, causes the component to re-render & the UI to update.',
   },
 ];
-export const CardArr=[
+export const CardArr = [
   {
-      name:'Anthony Blake',
-      description:'Blake is a professor of Computer Science at the University of Illinois.',
-      title:'Available Experts',
-      mail:'mailto:blake@example.com'
+    name: 'Anthony Blake',
+    description: 'Blake is a professor of Computer Science at the University of Illinois.',
+    title: 'Available Experts',
+    mail: 'mailto:blake@example.com'
   },
   {
-      name:'Maria Miles',
-      description:'Maria is a professor of Computer Science at the University of Illinois.',
-      title:'Email Maria',
-      mail:'mailto:blake@example.com'
+    name: 'Maria Miles',
+    description: 'Maria is a professor of Computer Science at the University of Illinois.',
+    title: 'Email Maria',
+    mail: 'mailto:blake@example.com'
   }
 ];
